@@ -1,0 +1,27 @@
+name: Test (Windows)
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  test-windows:
+    name: Test (Windows)
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+
+    - name: Install meson
+      run: |
+        pip install meson
+
+    - name: Build
+      run: |
+        meson setup build
+        meson compile -C build
+        build/hello
+
