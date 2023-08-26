@@ -13,14 +13,16 @@ jobs:
     - uses: actions/checkout@v3
     - uses: actions/setup-python@v4
 
-    - run: |
-        choco install ninja
-        pip install meson
+    - run: choco install ninja
+    - run: pip install meson
 
-    - run: |
-        meson setup build
-        meson compile -C build
+    - run: meson setup build
+    - run: meson compile -C build
+    - run: build/hello
 
-    - run: |
-        build/hello
+    - if: always()
+      run: |
+        cat D:\a\meson_fortran_windows_demo\meson_fortran_windows_demo\build\meson-logs\meson-log.txt
+        cat /d/a/meson_fortran_windows_demo/meson_fortran_windows_demo/build/meson-logs/meson-log.txt
+
 
