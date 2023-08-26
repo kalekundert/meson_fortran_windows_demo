@@ -20,9 +20,10 @@ jobs:
     - run: meson compile -C build
     - run: build/hello
 
-    - if: always()
-      run: |
-        cat D:\a\meson_fortran_windows_demo\meson_fortran_windows_demo\build\meson-logs\meson-log.txt
-        cat /d/a/meson_fortran_windows_demo/meson_fortran_windows_demo/build/meson-logs/meson-log.txt
+    - run: cat D:\a\meson_fortran_windows_demo\meson_fortran_windows_demo\build\meson-logs\meson-log.txt
+      if: always()
+
+    - run: D:\a\meson_fortran_windows_demo\meson_fortran_windows_demo\build\meson-private\sanitycheckf.exe
+      if: always()
 
 
