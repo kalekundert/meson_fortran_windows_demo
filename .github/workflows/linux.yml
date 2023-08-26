@@ -14,7 +14,8 @@ jobs:
     - uses: actions/setup-python@v4
 
     - run: |
-        sudo apt-get install -y meson
+        sudo apt-get install -y ninja-build
+        pip install meson
 
     - run: |
         meson setup build

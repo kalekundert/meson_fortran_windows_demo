@@ -14,7 +14,8 @@ jobs:
     - uses: actions/setup-python@v4
 
     - run: |
-        choco install meson
+        choco install ninja
+        pip install meson
 
     - run: |
         meson setup build
