@@ -1,9 +1,9 @@
 project(
   'meson_fortran_windows_demo',
-  'c',
+  'fortran',
 )
 
 executable(
   'hello',
-  'hello.c',
+  'hello.f90',
 )
